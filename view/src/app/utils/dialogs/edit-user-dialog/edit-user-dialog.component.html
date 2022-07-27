@@ -1,0 +1,91 @@
+<div class=" justify-content-center ">
+    <h1 mat-dialog-title>Edit User</h1>
+    <div  mat-dialog-content>
+        <form  (ngSubmit)="updateUser()" autocomplete="off">
+            <div class="form-group"> 
+                <input 
+                    class="form-control z" 
+                    type="text"
+                    id="firstName" 
+                    placeholder="FirstName"
+                    name="firstName"
+                    value={{user.firstName}}
+                    [(ngModel)]="user.firstName"
+                    [ngModelOptions]="{standalone: true}"
+                    #firstName="ngModel"
+                    required
+                     minlength="3"   />
+                    <p style="color:red;width:100%; text-align:center;"  class="k" *ngIf="firstName.touched && !firstName.valid">
+                        FirstName is required
+                    </p>    
+            </div>
+            <div class="form-group">
+                <input   
+                    class="form-control z" 
+                    type="text"
+                    placeholder="LastName"
+                    id="lastName"
+                    value={{user.lastName}}
+                    [(ngModel)]="user.lastName"
+                    [ngModelOptions]="{standalone: true}"  
+                    #lastName="ngModel"
+                    name="lastName"  
+                    required
+                    minlength="3"/>
+                <p style="color:red;width:100%; text-align:center" class="k"  *ngIf="lastName.touched && !lastName.valid">
+                    LastName is required
+                </p>     
+            </div>  
+            <div class="form-group z"> 
+                <input 
+                    placeholder="Email"
+                    class="form-control" 
+                    type="email" 
+                    id="email"
+                    value={{user.email}}
+                    [(ngModel)]="user.email"
+                    [ngModelOptions]="{standalone: true}" 
+                    #email="ngModel"
+                    required
+                    minlength="8"
+                    isEmail />
+                <p style="color:red;  width:100%; text-align:center" class="k"  *ngIf="email.touched && !email.valid">
+                    Email is required
+                </p> 
+            </div> 
+            <div class="form-group z"> 
+                <input 
+                    class="form-control" 
+                    questionplaceholder="password"
+                    type="text" 
+                    id="password"
+                    value={{user.password_clear}}
+                    [(ngModel)]="user.password_clear"
+                    [ngModelOptions]="{standalone: true}" 
+                    #password="ngModel"
+                    required
+                    minlength="6"
+                    maxlength="12" />
+                <p style="color:red;  width:100%; text-align:center" class="k"  *ngIf="password.touched && !password.valid">
+                    Email is required
+                </p> 
+            </div>  
+            <div class="form-group z">
+                <input 
+                    class="btn btn-success" 
+                    value="Update" 
+                    type="submit" 
+                    style="width:30%;margin-left: 18%;"
+                    [disabled]="firstName.invalid || lastName.invalid ||password.invalid  || email.invalid " 
+                    />
+                &nbsp;
+                <input 
+                    class="btn btn-danger" 
+                    value="Close" 
+                    [mat-dialog-close] 
+                    style="width:30%; "/>
+            </div>
+        </form>
+    </div> 
+</div>     
+ 

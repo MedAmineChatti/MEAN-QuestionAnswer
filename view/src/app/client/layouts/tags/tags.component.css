@@ -1,0 +1,198 @@
+  .container {
+    width: 100%;
+    margin: 50px auto;
+  } 
+
+
+
+.wrapper{
+  max-width: 450px;
+  margin-left: 39rem;
+ }
+.wrapper .search-input{
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+ /* border: 1px solid black;*/
+}
+.search-input input{
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+ }
+.search-input.active input{
+  border-radius: 5px 5px 0 0;
+}
+.search-input .autocom-box{
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+.search-input.active .autocom-box li{
+  display: block;
+}
+.autocom-box li:hover{
+  background: #efefef;
+}
+.search-input .icon{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #00395D ;
+  cursor: pointer;
+}
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+  }
+  
+  .card {
+    width: 23%; 
+    transition: 0.3s;
+    margin: 1ch;
+   }
+  
+  .card-header {
+   /* text-align: center;*/
+    padding: 10px  0px;
+    color: black;   
+    background-color: white;
+  }
+    
+  .card-body {
+    padding: 30px 20px;
+    text-align: center;
+    font-size:10px;
+  }
+  
+  .card-body .btn {
+    display: block;
+    color: #fff;
+    text-align: center;
+    background-color:#00395D ;
+    margin-top: 30px;
+    text-decoration: none;
+    padding: 10px 5px;
+  }
+  
+  .card:hover {
+    /*transform: scale(1.05);*/
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+  } 
+
+ .title{
+  width: 100%;
+  display: flex;
+  align-items:center;
+}
+
+  .description{
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+  
+  @media screen and (max-width:  1300px) {
+    .container  { 
+     margin-left: 160px;
+     }
+    .container .note{ 
+      width: 900px;
+     }
+    .wrapper{
+      max-width: 450px;
+      margin-left: 30rem;
+     }
+    .card {
+      width: 20%; 
+      transition: 0.3s;
+      margin: 0.5ch;
+     } 
+  }
+  
+  @media screen and (max-width: 620px) {
+    .container {
+      width: 100%;
+      margin-left:  0rem;
+    }
+    .row { 
+     justify-content: space-around;  
+    }
+    
+  
+    .card {
+      width: 80%;
+    }
+
+    .note {
+      display: none;
+    }
+    .wrapper{
+      max-width: 450px;
+      margin-left: 0;
+     }
+  }
+  
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

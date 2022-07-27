@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div class="contact-wrap">
+    <div class="contact-in">
+        <h1>Contact Info</h1>
+        <h2><i class="fa fa-phone" aria-hidden="true"></i> Phone</h2>
+        <p>+216 98617885</p>
+        <h2><i class="fa fa-envelope" aria-hidden="true"></i> Email</h2>
+        <p>info@democompany.com</p>
+        <h2><i class="fa fa-map-marker" aria-hidden="true"></i> Address</h2>
+        <p>Av. Beit El Hikma, Kairouan 3131</p>
+        <ul>
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+    <div class="contact-in" >
+        <h1>Send a Message</h1>
+        <form (ngSubmit)="sendEmail()"  autocomplete="off"> 
+            <p style="color:white;width:80%;" class="">Email :</p>
+            <input 
+                class="contact-in-input"
+                [(ngModel)]="data.email" 
+                type="email" 
+                #email="ngModel"
+                name="email"  
+                required
+            />
+            <p style="color:white;width:80%;"  class="k" *ngIf="email.touched && !email.valid">
+                Email is required
+            </p> 
+            <p style="color:white;width:80%;" class="">Subject :</p>
+            <input 
+                class="contact-in-input"
+                [(ngModel)]="data.title" 
+                type="text" 
+                #title="ngModel"
+                name="title"  
+                required
+            />
+            <p style="color:white;width:80%;"  class="k" *ngIf="title.touched && !title.valid">
+                Subject is required
+            </p> 
+            <p style="color:white;width:80%;" class="">Description :</p>
+            <textarea 
+                class="contact-in-textarea"
+                [(ngModel)]="data.description" 
+                type="text" 
+                #description="ngModel"
+                name="description"  
+                required>
+            </textarea>
+            <p style="color:white;width:80%;"  class="k" *ngIf="description.touched && !description.valid">
+                Decription is required
+            </p> 
+            <input [disabled]="title.invalid || title.invalid ||title.invalid"   type="submit" value="SUBMIT" class="contact-in-btn">
+        </form>
+    </div>
+    <div class="contact-in">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.5623048614257!2d10.088758614632226!3d35.66315403857191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fddaa4ffffffdb%3A0xb549b7a997fa8315!2sETC%20Tunisie!5e0!3m2!1sfr!2stn!4v1651847544989!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
+</div>

@@ -1,0 +1,95 @@
+#sidebar  {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 78px;;
+    background-color:  #00395D;
+    padding: 6px 14px;
+    z-index: 99;
+    transition: all 0.5s ease;
+    } 
+
+#content { 
+    padding: 20px; 
+    width: 84%;
+    height: 100%;
+    padding: 20px; 
+    position: fixed;
+    left: 10%;
+    top: 0;
+} 
+ 
+.table-wrapper {
+	background: #fff;
+	padding: 20px 25px;
+	border-radius: 3px;
+	min-width: 1000px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.table-title {        
+	padding-bottom: 15px;
+	background: #00395D;
+	color: #fff;
+	padding: 16px 30px;
+	min-width: 100%;
+	margin: -20px -25px 10px;
+	border-radius: 3px 3px 0 0;
+} 
+
+.table-title .btn {
+	color: #fff;
+	float: right;
+	font-size: 13px;
+	border: none;
+	min-width: 50px;
+	border-radius: 2px;
+	border: none;
+	outline: none !important;
+	margin-left: 10px;
+}
+
+.table-title .btn i {
+	float: left;
+	font-size: 21px;
+	margin-right: 5px;
+} 
+
+table.table td:last-child i {
+	opacity: 0.9;
+	font-size: 22px;
+	margin: 0 5px;
+} 
+
+table.table td a.edit {
+	color: #FFC107;
+}
+
+table.table td a.delete {
+	color: #F44336;
+} 
+
+.pagination {
+	float: right;
+	margin: 0 0 5px;
+}
+ 
+.pagination li i {
+	font-size: 16px;
+	padding-top: 6px
+}
+
+.hint-text {
+	float: left;
+	margin-top: 10px;
+	font-size: 13px;
+}     
+
+.description{
+    text-overflow: ellipsis;
+    width: 800px;
+    overflow: hidden;
+    white-space: nowrap;
+} 
+ 

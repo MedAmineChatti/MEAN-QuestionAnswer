@@ -1,0 +1,73 @@
+<div class=" justify-content-center ">
+    <h1 mat-dialog-title>Edit Answer</h1>
+    <div  mat-dialog-content>
+        <form  (ngSubmit)="updateAnswer()" autocomplete="off">
+            <div class="form-group"> 
+                <input 
+                    class="form-control z" 
+                    type="text" 
+                    name="title"
+                    value={{answer.userName}}
+                    [(ngModel)]="answer.userName"
+                    [ngModelOptions]="{standalone: true}"
+                    #userName="ngModel"
+                    required
+                     minlength="3"   />
+                    <p style="color:red;width:100%; text-align:center;"  class="k" *ngIf="userName.touched && !userName.valid">
+                        Title is required
+                    </p>    
+            </div>
+            <br>
+            <div class="form-group"> 
+                <input 
+                    class="form-control z" 
+                    type="number" 
+                    name="raiting"
+                    value={{answer.raiting}}
+                    [(ngModel)]="answer.raiting"
+                    [ngModelOptions]="{standalone: true}"
+                    #raiting="ngModel"
+                    required
+                     minlength="3"   />
+                    <p style="color:red;width:100%; text-align:center;"  class="k" *ngIf="raiting.touched && !raiting.valid">
+                        Title is required
+                    </p>    
+            </div>
+            <br>
+            <div class="form-group"> 
+                <textarea
+                class="form-control "  
+                name="decscription"
+                value={{answer.decscription}}
+                [(ngModel)]="answer.decscription"
+                [ngModelOptions]="{standalone: true}"
+                #description="ngModel"
+                required
+                minlength="3" 
+                rows="5" 
+                ></textarea>
+               
+                    <p style="color:red;width:100%; text-align:center;"  class="k" *ngIf="description.touched && !description.valid">
+                        Title is required
+                    </p>    
+            </div>
+            <br>
+            <div class="form-group z">
+                <input 
+
+                    [disabled]="userName.invalid"  
+                    class="btn btn-success" 
+                    value="Update" 
+                    type="submit" 
+                    style="width:30%;margin-left: 18%;"/>
+                &nbsp;
+                <input 
+                    class="btn btn-danger" 
+                    value="Close" 
+                    [mat-dialog-close] 
+                    style="width:30%; "/>
+            </div>
+        </form>
+    </div> 
+</div>     
+ 

@@ -1,0 +1,21 @@
+<nav>
+  
+  <div class="logo">
+   <!-- <img alt="xxx" class="xxx" src="../../../../assets/images/etc.jpg"width = "190px">
+    -->
+    ETC
+  </div>
+  <input type="checkbox" id="click">
+  <label for="click" class="menu-btn">
+    <i class="fas fa-bars"></i>
+  </label>
+  <ul>
+    <li><a   routerLink="/home" >Home</a></li>
+    <li><a routerLink="/home/tags"  >Tags</a></li >
+    <li><a routerLink="/home/myquestions"  >My Questions</a></li >
+    <li><a routerLink="/home/contact"  >Contact Us</a></li >
+
+      
+    <li><a class="active" (click)="onLogoutClick()" >Logout</a></li>
+  </ul>
+</nav>

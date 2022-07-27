@@ -1,0 +1,148 @@
+ 
+.header{
+    width: 100%;
+    display:flex;
+    height:10vh;
+    align-items: center;
+    justify-content: center;
+    opacity: .8; 
+} 
+
+.length{
+    margin-right:5rem;
+    margin-top :0.9rem;
+}
+
+.input{
+    text-align: center;
+    font-size:larger;
+    width: 50vw;
+    transition: .8s;
+    height: 2.5rem;
+    outline: none;
+    background-color:rgba(232, 238, 232, 0.897);
+    border:#00395D solid 1px;
+    border-radius: 10px; 
+    display: flex; 
+
+    margin-right: 5rem;
+}
+
+.cart{
+    background-color:rgba(232, 238, 232, 0.897);
+    height: 25vh;
+    cursor:pointer;
+    border-right:none;
+    border-left:none;
+    width: 90vw;
+    margin: auto;
+    border:#00395D solid 1px;
+    display: flex; 
+    align-items: center;
+    justify-content:space-around; 
+    transition:.1s;
+    margin-top:1rem;
+    max-height: 250px;
+    border-radius: 10px; 
+}
+
+.cart:hover{
+    transform: scale(1.01);
+}
+
+.cart ul li{
+    list-style:none;
+    padding: 0;
+    line-height: 1.8;
+}
+
+.qscontainer{
+    width: 70%;
+    line-height:1.8;
+}
+
+.qs{
+   text-decoration:none;
+   font-size: 1.2rem;
+   line-height: 1.5;
+}
+
+.tagscontainer{
+    width: 100%;
+    display: flex;
+    align-items:center;
+}
+
+.tagscontainer div{
+    display: grid;
+    width: 5rem;
+    background: rgb(248, 245, 247);
+    place-items: center;
+    margin-left:1rem;
+    border:white solid 0.5px;
+    text-decoration: none;
+    transition:.1s;
+}
+
+.tagscontainer div:hover{
+    background-color: white;
+}
+
+.tagscontainer div a{  
+    text-decoration: none; 
+}
+
+.tagscontainer span{
+    color:rgb(59, 59, 240);
+}
+
+.description{
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.date{
+    opacity:.7;
+} 
+
+
+.zzhz{
+   background-color: rgba(232, 238, 232, 0.897);
+   border-color:black;
+} 
+
+@media (max-width:  1300px) { 
+    
+  }
+  
+  @media (max-width: 570px) {
+
+    .input{
+        background-color:rgba(232, 238, 232, 0.897);
+        border:#00395D solid 1px;
+        border-radius: 10px; 
+        width: 90vw; 
+    }
+     
+     .length{
+        display: none;
+     } 
+
+     ul 
+     {
+        display: none;
+     }  
+
+     .date{
+         display: none;
+    }  
+    .tagscontainer{
+        display: none;
+    }
+    .input{
+        width: 230px;
+        margin-right: 10px ;
+    }
+  }  

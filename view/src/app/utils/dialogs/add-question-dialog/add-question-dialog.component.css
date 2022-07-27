@@ -1,0 +1,9 @@
+.mul-select{
+  width: 100%;
+}
+
+@media (max-width: 570px) {
+ .card{
+   width: 500px; 
+}
+    }

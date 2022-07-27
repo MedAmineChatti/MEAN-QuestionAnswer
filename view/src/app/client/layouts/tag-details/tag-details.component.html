@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="body">
+    <br>
+    <div class="header">  
+        <h1 class="length">Total: {{ questions.length }} questions</h1>
+        <div class="searchbar">
+            <input  autocomplete="off" 
+                    placeholder="Search By Title..." 
+                    class="input" 
+                    type="text" name="firstName" 
+                    [(ngModel)]="title"  
+                    (ngModelChange)="Search()" 
+                    /> 
+        </div>  
+    </div> 
+    <div class="cartcontainer" >
+        <div style="margin :3rem  5rem; ">
+            <h1 class="b"> Questions tagged [{{ tagData.title }}]</h1>
+            <h3 class="c">{{ tagData.description }}</h3> 
+        </div>
+        <div class="cart"  *ngFor="let question of questions | paginate: {itemsPerPage:10, currentPage:p}">
+           
+            <div class="qscontainer">
+                <a  [routerLink]="['/questiondetails/', question._id]" class="qs">{{ question.title }}</a>
+                <p class="description"> {{ question.description }}</p>
+                <div class="tagscontainer">
+                    <div *ngFor=" let tag of  question.tags  "> 
+                        <a (click)="switchTag(tag)" > 
+                            {{tag}}
+                        </a>
+                   </div>      
+                </div>  
+            </div>
+            <p class="date"> {{ question.creationDate}}</p> 
+        </div>
+    </div>
+    <br>
+    <div class="clearfix">
+        <ul class="pagination">
+            <pagination-controls (pageChange)="p = $event" ></pagination-controls> 
+        </ul>
+    </div>
+</div>

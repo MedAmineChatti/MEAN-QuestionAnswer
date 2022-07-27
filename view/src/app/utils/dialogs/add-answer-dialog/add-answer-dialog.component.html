@@ -1,0 +1,28 @@
+<div class="card" style="border:none">
+    <div class="card-header" style="background-color: #00395D; color:white;" >
+      <h1> Write a public answer</h1>
+    </div>
+    <form   (ngSubmit)="addAnswer()" autocomplete="off">
+    <ul class="list-group list-group-flush">
+     
+      <li class="list-group-item"> 
+          <div >
+             <angular-editor   
+                   [(ngModel)]="newAwnser.decscription" 
+                   [ngModelOptions]="{standalone: true}"
+                   maxlength="10" 
+                    id="editori" 
+                     > 
+             </angular-editor>
+           </div>   
+      </li> 
+      <li class="list-group-item">
+        <input class="btn btn-success" type="submit" value="Add your answer" > 
+       </li>
+    </ul>
+  </form>
+  </div>
+
+
+
+

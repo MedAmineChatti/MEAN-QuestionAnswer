@@ -1,0 +1,56 @@
+<div class="card" style="border:none">
+    <div class="card-header" style="background-color: #00395D; color:white;" >
+      <h1>Ask a public question</h1>
+    </div>
+    <form   (ngSubmit)="addQuestion()" autocomplete="off">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div className="title">
+          <label>
+            <strong>Title: </strong>
+            <small>
+              Be specific and imagine you’re asking a question to another person
+            </small>
+          </label> <br>
+          <input 
+              type="text"  
+              style="width: 100%;" 
+              [(ngModel)]="newQuestion.title"  
+              [ngModelOptions]="{standalone: true}"
+              />
+        </div>
+      </li>
+      <li class="list-group-item">
+        
+          <form  >
+        <div class="form-group">
+          <label>
+            <strong>Description:</strong>
+            <small>
+              Include all the information someone would need to answer your
+              question
+            </small>
+          </label> 
+          <br>
+          <div >
+             <angular-editor   
+                   [(ngModel)]="newQuestion.description" 
+                   [ngModelOptions]="{standalone: true}"
+                   maxlength="10" 
+                    id="editori" 
+                     > 
+             </angular-editor>
+           </div>   
+            </div>
+          </form>
+      
+      </li> 
+      <li class="list-group-item">
+        <input class="btn btn-success" type="submit" value="Add your question" > 
+       </li>
+    </ul>
+  </form>
+  </div>
+
+
+

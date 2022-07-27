@@ -1,0 +1,67 @@
+<div class="body">
+    <div id="sidebar"> 
+        <app-side-bar ></app-side-bar>  
+     </div>
+    <div id="content"> 
+ 	<div class="table-responsive">
+		<div class="table-wrapper">
+			<div class="table-title">
+				<div class="row">
+					<div class="col-sm-6">
+                         
+                        <input  
+						    placeholder="Enter Title Name to search" 
+							class="form-control" 
+							type="text" 
+							name="title" 
+							[(ngModel)]="title"  
+							(ngModelChange)="Search()"  />
+                         
+					</div>
+                    
+					<div class="col-sm-6">
+ 					</div>
+				</div>
+			</div>
+			<table class="table table-striped table-hover"  >
+				<thead>
+					<tr> 
+                            <th scope="col">Title </th> 
+                            <th scope="col">Description </th>
+                            <th scope="col">Tags</th> 
+					</tr>
+				</thead>
+				<tbody>
+				 
+				    <tr *ngFor="let question of questions | paginate: {itemsPerPage:9, currentPage:p} "   > 
+                        <td>
+                            <p class="title">
+                                {{ question.title }}
+                            </p> 
+                        </td>
+                        <td > 
+                            <p class="description">
+                                {{ question.description }}
+                            </p> 
+                        </td>
+                        <td>{{ question.tags }}</td>  
+						<td>
+							<a (click)="openEditQuestionDialog( question._id)" class="edit" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<a  (click)="removeQuestion(question._id)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+						</td>
+					</tr>					
+
+				</tbody>
+				
+			</table>
+			<div class="clearfix">
+				<div class="hint-text"  style="margin-top:-1px;" >Showing <b>9</b> out of <b>{{ questions.length }}</b> users</div>
+				<ul class="pagination"> 
+						<pagination-controls (pageChange)="p = $event" ></pagination-controls>  
+				</ul>
+			</div>
+		</div>
+	</div>        
+</div>
+</div> 
+   

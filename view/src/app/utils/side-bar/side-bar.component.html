@@ -1,0 +1,50 @@
+<div id="sidebar" >
+       
+  <ul class="nav-list" style="margin-top: 139px ;">
+    
+    <li>
+      <a [routerLink]="['/dashboard']">
+        <i class='bx bx-grid-alt'></i>
+        <span class="links_name">Dashboard</span>
+      </a>
+       <span class="tooltip">Dashboard</span>
+    </li> 
+    <li>
+     <a  [routerLink]="['/dashboard/usermangment']">
+       <i class='bx bx-user' ></i>
+       <span class="links_name">User </span>
+     </a>
+     <span class="tooltip">User Management</span>
+   </li>
+   <li>
+    <a  [routerLink]="['/dashboard/tagmangment']">
+      <i  class='bx bx-folder' ></i>
+      <span class="links_name">Tag Manager</span>
+    </a>
+    <span class="tooltip">Tag Manager</span>
+  </li>
+   <li>
+    <a  [routerLink]="['/dashboard/questionmangment']" >
+       <i class='bx bx-chat' ></i>
+       <span class="links_name">Question Management</span>
+     </a>
+     <span class="tooltip">Question Management</span>
+   </li>  
+   <li>
+     <a [routerLink]="['/dashboard/answermangment']" >
+       <i class='bx bx-home-alt' ></i>
+       <span class="links_name">Answer Management</span>
+     </a>
+     <span class="tooltip">Answer Management</span>
+   </li> 
+   <li>
+     <a  (click)="onLogoutClick()" >
+      <i class='bx bx-log-out' id="log_out" ></i>
+       <span class="links_name">Log Out</span>
+     </a>
+     <span class="tooltip">Log Out</span>
+   </li>
+   
+  </ul>
+</div>
+ 

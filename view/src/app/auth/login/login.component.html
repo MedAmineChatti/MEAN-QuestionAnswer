@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="forms-container">
+        <div class="signin-signup">
+            <form (ngSubmit)="login()" class="sign-in-form">
+                <h2 class="title">Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input [(ngModel)]="userDetails.email" name="email" type="text" placeholder="Email" #email="ngModel"
+                        required minlength="8" isEmail />
+                </div>
+                <p style="color:red;  width:80%;" class="k" *ngIf="email.touched && !email.valid">
+                    Email is required
+                </p>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input [(ngModel)]="userDetails.password" name="password" type="password" placeholder="Password"
+                        #password="ngModel" required minlength="8" />
+                </div>
+                <p style="color:red; width:80%;" class="k" *ngIf="password.touched && !password.valid">
+                    Password more than 8 character
+                </p>
+                <input [disabled]=" password.invalid  || email.invalid " type="submit" value="Login"
+                    class="btn solid" />
+            </form>
+        </div>
+    </div>
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+                <h3>New here ?</h3>
+                <p>
+                    The main goal of this platform is to To reduce time on research,
+                    boost communication across development teams, and exchange experiences.
+                </p>
+                <button routerLink="/register" class="btn transparent" id="sign-up-btn">
+                    Sign up
+                </button>
+            </div>
+            <img src="../../../../assets/images/log.svg" class="image" alt="" />
+        </div>
+    </div>
+</div>

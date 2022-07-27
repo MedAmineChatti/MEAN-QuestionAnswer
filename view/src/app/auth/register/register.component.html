@@ -1,0 +1,88 @@
+<div class="container"> 
+    <div class="forms-container"> 
+        <div class="signin-signup"> 
+            <form  (ngSubmit)="registerNewUser()" class="sign-in-form " autocomplete="off" >
+                <h2 class="title">Sign up</h2>
+                <div class="input-field  ">
+                    <i class="fas fa-user"></i> 
+                    <input  
+                        [(ngModel)]="newUser.firstName"    
+                        type="text"  
+                        name="firstName"  
+                        placeholder="FirstName" 
+                        #firstName="ngModel"
+                        required
+                        minlength="3" 
+                    />      
+                </div>
+                <p style="color:red;width:80%;"  class="k" *ngIf="firstName.touched && !firstName.valid">
+                    FirstName is required
+                </p>    
+                <div class="input-field">
+                    <i class="fas  fa-user"></i>
+                    <input 
+                        [(ngModel)]="newUser.lastName" 
+                        type="text" 
+                        placeholder="LastName"
+                        #lastName="ngModel"
+                        name="lastName"  
+                        required
+                        minlength="3"
+                    />
+                </div>
+                <p style="color:red;width:80%;" class="k"  *ngIf="lastName.touched && !lastName.valid">
+                    LastName is required
+                </p>  
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input 
+                        [(ngModel)]="newUser.email" 
+                        type="email" 
+                        name="Email" 
+                        placeholder="Email"
+                        #email="ngModel"
+                        required
+                        minlength="8"
+                        isEmail 
+                    />
+                </div>
+                <p style="color:red;  width:80%;" class="k"  *ngIf="email.touched && !email.valid">
+                    Email is required
+                </p> 
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input 
+                        [(ngModel)]="newUser.password" 
+                        type="password" 
+                        name="Password" 
+                        placeholder="Password"
+                        #password="ngModel"
+                        required
+                        minlength="6"
+                        maxlength="12" 
+                    />
+                </div>
+                <p style="color:red; width:80%;"  class="k" *ngIf="password.touched && !password.valid">
+                    Password betwin 6 to 12 character
+                 </p>  
+                <input    [disabled]="firstName.invalid || lastName.invalid ||password.invalid  || email.invalid "  type="submit" class="btn" value="Sign up" />
+            </form>     
+        </div>
+    </div>
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+                <h3>One of us ?</h3>
+                <p>
+                    This questions and answers platform was created specifically for this
+                    company to assist our developers in fixing any technical problems they
+                    may face.
+                </p>
+                <button   routerLink="/" class="btn transparent " id="sign-up-btn">
+                    Sign in
+                </button>
+            </div>
+            <img src="../../../../assets/images/register.svg" class="image" alt="" width="100%"/> 
+        </div>
+    </div>
+ </div>

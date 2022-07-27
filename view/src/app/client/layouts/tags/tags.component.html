@@ -1,0 +1,49 @@
+<app-header></app-header>  
+<div class="container">
+    <p class="note">
+        <b>Note : </b>A tag is a keyword or label that categorizes your question with other, similar questions. Using the right tags makes it easier for others to find and answer your question. 
+    </p>
+    <div class="wrapper">
+        <div class="search-input">
+            <a href="" target="_blank" hidden></a>
+            <input 
+                type="text" 
+                placeholder="Type a tag name to search.." 
+                type="text" 
+                name="title" 
+                [(ngModel)]="title"   
+                (ngModelChange)="Search()" /> 
+            <div class="autocom-box">
+                <!-- here list are inserted from javascript -->
+            </div>
+            <div class="icon">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </div>  
+    <br> 
+    <div class="row"> 
+        <div class="card" *ngFor="let tag of tags | paginate: {itemsPerPage:32, currentPage:p} " >
+            <div class="card-header"> 
+                <div class="title"> 
+                    <a> {{ tag.title }} </a>   
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="description">
+                    {{ tag.description }}
+                </p>
+                <a  class="btn" [routerLink]="['/tagdetails/', tag.title]">
+                  Questions
+                </a>
+            </div>
+        </div>
+        
+    </div>  
+    <br>
+    <div class="clearfix">
+        <ul class="pagination">
+            <pagination-controls (pageChange)="p = $event"   ></pagination-controls> 
+        </ul>
+    </div>
+<div>

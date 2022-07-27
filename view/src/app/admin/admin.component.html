@@ -1,0 +1,40 @@
+ <div  class="body">
+    <div id="sidebar"> 
+        <app-side-bar></app-side-bar>  
+    </div>
+    <div id="content" >  
+        <div class="flex-container">
+            <div class="show"> 
+                <b class="userNumber">
+                    {{users.length }} User
+                </b>
+            </div>
+            <div class="show"> 
+                <b class="userNumber">
+                    {{tags.length }} Tag
+                </b>
+            </div>
+            <div class="show"> 
+                <b class="questionNumber">
+                    {{questions.length }} Question 
+                </b>
+            </div>
+            
+            <div class="show"> 
+                <b class="answerNumber">
+                    {{answers.length }}  Answer
+                </b>
+            </div>
+        </div>
+        <div class="flex-container2">
+                    
+                <app-line-chart></app-line-chart>   
+           
+                <app-bar-chart></app-bar-chart> 
+             
+
+        </div>
+          
+    </div>         
+        
+</div>     

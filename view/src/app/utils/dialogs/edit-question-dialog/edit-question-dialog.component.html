@@ -1,0 +1,60 @@
+<div class=" justify-content-center ">
+    <h1 mat-dialog-title>Edit Question</h1>
+    <div  mat-dialog-content>
+        <form  (ngSubmit)="updateUser()" autocomplete="off">
+            <div class="form-group"> 
+                <input 
+                    class="form-control z" 
+                    type="text"
+                    id="firstName" 
+                    placeholder="Title"
+                    name="title"
+                    value={{question.title}}
+                    [(ngModel)]="question.title"
+                    [ngModelOptions]="{standalone: true}"
+                    #title="ngModel"
+                    required
+                     minlength="3"   />
+                    <p style="color:red;width:100%; text-align:center;"  class="k" *ngIf="title.touched && !title.valid">
+                        Title is required
+                    </p>    
+            </div>
+            <br>
+            <div class="form-group"> 
+                <textarea
+                class="form-control " 
+                id="decription" 
+                name="decription"
+                value={{question.description}}
+                [(ngModel)]="question.description"
+                [ngModelOptions]="{standalone: true}"
+                #title="ngModel"
+                required
+                minlength="3" 
+                rows="5" 
+                ></textarea>
+               
+                    <p style="color:red;width:100%; text-align:center;"  class="k" *ngIf="title.touched && !title.valid">
+                        Title is required
+                    </p>    
+            </div>
+            <br>
+            <div class="form-group z">
+                <input 
+
+                    [disabled]="title.invalid"  
+                    class="btn btn-success" 
+                    value="Update" 
+                    type="submit" 
+                    style="width:30%;margin-left: 18%;"/>
+                &nbsp;
+                <input 
+                    class="btn btn-danger" 
+                    value="Close" 
+                    [mat-dialog-close] 
+                    style="width:30%; "/>
+            </div>
+        </form>
+    </div> 
+</div>     
+ 

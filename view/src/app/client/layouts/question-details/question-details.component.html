@@ -1,0 +1,60 @@
+<app-header> 
+</app-header>
+<div class="flexontainer">
+<div class="bcontainer">
+<header>
+  <nav>
+  
+    <div>
+    <h1> {{ question.title }}</h1>
+    <span>date : {{ question.creationDate}}</span> <span>veiwed : 37 times</span>
+  </div>
+  </nav>
+</header>
+<div class="qscontainer">
+
+  <P class="qs" id="box"> </P>
+ <div class="tagscontainer">
+   <span>tags:</span>
+   <div *ngFor=" let tag of  question.tags  "> 
+    <a  [routerLink]="['/tagdetails/', tag]" > 
+        {{tag}}
+    </a>
+</div>   
+
+ </div>
+
+</div>
+<button type="button" id="aqs" class (click)="openAddAnswerDialog(question._id)">answer question</button>
+</div>
+<div class="ccontainer">
+  <h1>{{ awnsers.length }} answers</h1>
+  <div class="answercontainer" *ngFor="let awnser of awnsers ">
+    <div class="rating">
+        <button class="btn btn-secondary">
+          <i class="fa fa-arrow-up " (click)="addOneRaitingAnswer(awnser._id)" ></i>
+        </button>
+        <b style="font-size:1.55rem; margin-top: 5px; margin-bottom: 3px;">
+          {{ awnser.raiting }} 
+        </b>
+        <button class="btn btn-secondary">
+          <i class="fa  fa-arrow-down" (click)="subtractOneRaitingAnswer(awnser._id)"></i>
+        </button> 
+    </div> 
+    <div class="an">
+        <span class="username" style="color:#00398D;">
+          <b>
+            Name: {{ awnser.userName }} 
+          </b>   
+        </span>
+
+        <br><br>
+
+            <P class="ans" id="box2" >             
+              {{ awnser.decscription }}   
+            </P>
+ 
+    </div>
+ 
+</div>
+</div>

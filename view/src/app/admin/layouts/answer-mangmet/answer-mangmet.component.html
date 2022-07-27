@@ -1,0 +1,67 @@
+<div class="body">
+    <div id="sidebar"> 
+        <app-side-bar ></app-side-bar>  
+     </div>
+    <div id="content"> 
+ 	<div class="table-responsive">
+		<div class="table-wrapper">
+			<div class="table-title">
+				<div class="row">
+					<div class="col-sm-6">
+                         
+                        <input  
+						placeholder="Enter Description to search" 
+						class="form-control" 
+						type="text" 
+						name="description" 
+						[(ngModel)]="description"  
+						(ngModelChange)="Search()"   />
+					</div>
+					<div class="col-sm-6">
+ 					</div>
+				</div>
+			</div>
+			<table class="table table-striped table-hover"  >
+				<thead>
+					<tr> 
+                            <th scope="col">Description </th> 
+                            <th scope="col">Rating</th>
+							<th scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+				 
+				    <tr *ngFor="let answer  of answers | paginate: {itemsPerPage:9, currentPage:p} "   >
+						
+						<td > 
+                            <p class="description">
+                                {{ answer.decscription }}
+                            </p> 
+                        </td> 
+                        <td>
+                            <p class="raiting">
+                                {{ answer.raiting }}
+                            </p> 
+                        </td>
+  
+						<td>
+							<a (click)="openEditAnswerDialog( answer._id)"    class="edit" data-toggle="modal" ><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+
+							<a  (click)="removeAnswer(answer._id)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+						</td>
+					</tr>					
+
+				</tbody>
+				
+			</table>
+			<div class="clearfix">
+				<div class="hint-text"  style="margin-top:-1px;" >Showing <b>9</b> out of <b>{{ answers.length }}</b> users</div>
+				<ul class="pagination"> 
+						<pagination-controls (pageChange)="p = $event" ></pagination-controls>  
+				</ul>
+			</div>
+		</div>
+	</div>        
+</div>
+</div> 
+   
